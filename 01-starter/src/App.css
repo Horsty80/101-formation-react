@@ -1,0 +1,11 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: var(--grey); */
+  min-height: 100vh;
+}
+
+.App-logo {
+  height: 40px;
+}

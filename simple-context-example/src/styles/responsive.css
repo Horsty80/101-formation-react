@@ -1,0 +1,98 @@
+/* navigation */
+.css-navigation {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background: var(--purple);
+  border-left: 10px solid var(--purple);
+  transition: 0.5s;
+  overflow: hidden;
+}
+.css-navigation.css-active {
+  width: 80px;
+}
+/* main */
+.css-main {
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  background: var(--white);
+  transition: 0.5s;
+}
+
+.css-main.css-active {
+  width: calc(100% - 80px);
+  left: 80px;
+}
+
+/* cardbox */
+.css-cardBox {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+/* table */
+.css-details {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+@media (max-width: 991px) {
+  .css-navigation {
+    left: -300px;
+  }
+  .css-navigation.css-active {
+    left: 0;
+    width: 300px;
+  }
+  .css-main {
+    width: 100%;
+    left: 0;
+  }
+  .css-main.css-active {
+    left: 300px;
+  }
+  .css-cardBox {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .css-details {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .css-recentOrders {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .css-cardBox {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cardHeader h2 {
+    font-size: 20px;
+  }
+  .css-user {
+    min-width: 40px;
+  }
+  .css-navigation {
+    width: 100%;
+    left: -100%;
+    z-index: 10000;
+  }
+  .css-navigation.css-active {
+    left: 0;
+  }
+  .css-toggle {
+    z-index: 10001;
+  }
+}
